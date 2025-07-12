@@ -19,30 +19,110 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 - [Robust background job processing](https://laravel.com/docs/queues).
 - [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+> [!IMPORTANT]
+> O Laravel é a base de referencia e fonte de pesquisa desse projeto.
 
-## Learning Laravel
+### Escopo Proposto da Estrutura
+Analisando o que é uma boa pratica, pelo tamanho do projeto o melhor a ser feito é uma aplicação com menimo de complexidade e aproveitando o que da, e menter as boas praticas.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+```
+laravel-comissao-api/ 
+├── app/
+│   ├── Http/
+│   │   └── Controllers/
+│   │       └── SaleController.php
+│   ├── Domain/
+│   │   └── Sale/
+│   │       ├── Entities/
+│   │       │   └── Sale.php
+│   │       ├── Interfaces/
+│   │       │   └── SaleRepositoryInterface.php
+│   │       └── Services/
+│   │           └── CalculatorCommission.php
+│   └── Infrastructure/
+│       └── Repositories/
+│           └── InMemorySaleRepository.php
+├── routes/
+│   └── web.php
+├── storage/
+│   └── app/
+│       ├── public/
+│           └── sales.json
+├── tests/
+│   └── Feature/
+│       └── Sale
+|            └── CalculatorCommissionTest.php
+|            └── InMemorySaleRepositoryTest.php
+|            └── SaleApiStoreTest.php
+└── README.md
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+```
+### Regras de comissão
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+As regras estão muito claras então só uma ilustração para ajudar.
+O resumo diz: Cada venda tem um valor_total e um tipo_venda (direta ou afiliada).
+------------------------
+### A comissão é distribuída conforme abaixo:
+| Tipo de Venda | Plataforma | Produtor | Afiliado |
+|---|---|---|---|
+| Direta | 10% | 90% | 0% |
+| Afiliada | 10% | 60% | 30% |
+-------------------------
+### Resalva nas Boas Práticas Aplicadas
 
-## Laravel Sponsors
+Esse são os pontos que levei em consideração com base na estrutura de aquivos.
+* Separação de Domínios: Organização clara da arquitetura em Serviços, Entidades e Repositórios.
+* Injeção de Dependência: Implementada via construtores para desacoplamento.
+* Uso de Contratos/Interfaces: Contratos e interfaces foram empregados para facilitar a testabilidade e a escalabilidade do projeto.
+* Persistência Simulada: Dados armazenados em JSON no diretório storage/app.
+* Testes Unitários: Foram desenvolvidos testes unitários para as regras de negócio e para as partes essenciais do código.
+* E os requisitos solicitados como documentação clara no README.md com instruções e decisões tomadas
+------------------------
+### Laravel Comissão API
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Este é um projeto de API construído com Laravel 12, e por esta versão ser altamente recomendada conforme informação no site official.
+A API tem como objetivo a simulação de comissões de vendas digitais simples, abrangendo tanto cenários com afiliados quanto sem, e foi projetada para não incluir mecanismos de autenticação. 
+O desenvolvimento seguiu princípios de arquitetura limpa (Clean Architecture) e boas práticas de código, com foco primordial na clareza do escopo, na organização estruturada e na aplicação de testes estratégicos.
+------------------------
+### Tecnologias Necessárias
 
-### Premium Partners
+PHP 8.4.10 | Caso necessário pode ser baixar no [PHP](https://www.php.net).
+Composer   | Que pode ser baixado no [Composer](https://getcomposer.org).
+Laravel 12 | Pode ser baixado e estudado na documentação oficial [Laravel](https://laravel.com/docs/12.x).
+Todas os comandos para serem feitos também constam no site, logo é recomandado estudar caso seja necessário.
+-------------------------
+### Complementar
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+Requisito: JSON como armazenamento (sem banco de dados), essa foi a melhor forma para diminuir a complexidade.
+Padrão RESTful API
+Arquitetura Limpa (Clean Architecture)
+-----------------------
+### Como rodar o projeto
+
+Comandos para serem execultados.
+1. Clone o repositório:
+```
+git clone https://github.com/angelo-marques/laravel-comissao-api.git
+```
+2. Instale as dependências:
+```
+composer install
+```
+3. Configure o Laravel:
+```
+cp .env.example .env
+php artisan key:generate
+```
+4. Rodar no servidor local:
+````
+php artisan serve
+````
+
+
+
+
+
+
 
 ## Contributing
 
