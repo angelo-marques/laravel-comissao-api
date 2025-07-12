@@ -52,7 +52,7 @@ laravel-comissao-api/
 ```
 ### Regras de comissão
 
-As regras estão muito claras então só uma ilustração para ajudar.
+As regras estão muito claras então só uma ilustração para ajudar. <br>
 O resumo diz: Cada venda tem um valor_total e um tipo_venda (direta ou afiliada).
 
 ------------------------
@@ -79,17 +79,18 @@ Esse são os pontos que levei em consideração com base na estrutura de aquivos
 
 ### Laravel Comissão API
 
-Este é um projeto de API construído com Laravel 12, e por esta versão ser altamente recomendada conforme informação no site official.
-A API tem como objetivo a simulação de comissões de vendas digitais simples, abrangendo tanto cenários com afiliados quanto sem, e foi projetada para não incluir mecanismos de autenticação. 
-O desenvolvimento seguiu princípios de arquitetura limpa (Clean Architecture) e boas práticas de código, com foco primordial na clareza do escopo, na organização estruturada e na aplicação de testes estratégicos.
+Este é um projeto de API construído com Laravel 12, e por esta versão ser altamente recomendada conforme informação no site official. <br>
+A API tem como objetivo a simulação de comissões de vendas digitais simples, abrangendo tanto cenários com afiliados quanto sem, e foi projetada para não incluir mecanismos de autenticação. <br>
+O desenvolvimento seguiu princípios de arquitetura limpa (Clean Architecture) e boas práticas de código, com foco primordial na clareza do escopo, na organização estruturada e na aplicação de testes estratégicos. <br>
 
 ------------------------
 
 ### Tecnologias Necessárias
 
-PHP 8.4.10 | Caso necessário pode ser baixar no [PHP](https://www.php.net).
-Composer   | Que pode ser baixado no [Composer](https://getcomposer.org).
-Laravel 12 | Pode ser baixado e estudado na documentação oficial [Laravel](https://laravel.com/docs/12.x).
+1. PHP 8.4.10 | Caso necessário pode ser baixar no [PHP](https://www.php.net).
+2. Composer   | Que pode ser baixado no [Composer](https://getcomposer.org).
+3. Laravel 12 | Pode ser baixado e estudado na documentação oficial [Laravel](https://laravel.com/docs/12.x).
+
 Todas os comandos para serem feitos também constam no site, logo é recomandado estudar caso seja necessário.
 
 -------------------------
@@ -97,10 +98,10 @@ Todas os comandos para serem feitos também constam no site, logo é recomandado
 ### Complementar
 
 Requisito: JSON como armazenamento (sem banco de dados), essa foi a melhor forma para diminuir a complexidade.
-Padrão RESTful API.
-Arquitetura Limpa (Clean Architecture).
-Teste de Unidade da Regra de Negócio. 
-Teste de Unidade do Repositório ou Teste de Persistencia.
+- Padrão RESTful API.
+- Arquitetura Limpa (Clean Architecture).
+- Teste de Unidade da Regra de Negócio. 
+- Teste de Unidade do Repositório ou Teste de Persistencia.
 
 -----------------------
 
@@ -130,9 +131,9 @@ Execute os testes de API com comendo:
 ````
 php artisan test
 ````
-Obs.: há um teste de gravação de dados que dará erro se não alterar a rota do arquivo, pois ele funciona de uma forma online e de outra localmente, devido à localidade de quem está executando. Esse foi o único ponto que não consegui resolver. <br/> 
-Motivo: estou de mudança e precisarei de tempo para analisar todos os pontos.  <br/> 
-Portanto, peço desculpas por esse problema, mas são apenas dois testes de persistência. <br/> 
+> [!NOTE]
+> Obs.: há um teste de gravação de dados que dará erro se não alterar a rota do arquivo, pois ele funciona de uma forma online e de outra localmente, devido à localidade de quem está executando. Esse foi o único ponto que não consegui resolver. <br/> 
+Motivo: estou de mudança e precisarei de tempo para analisar todos os pontos. Portanto, peço desculpas por esse problema, mas são apenas dois testes de persistência. <br/> 
 
 ### Ambiguidades
 Pontos utilizados para resolver ou evitar ambiguidades: <br>
@@ -140,11 +141,12 @@ Modularidade: O sistema, embora simples, seguiu o padrão de divisão em partes 
 Testabilidade: Ou seja, os testes definidos foram elaborados para prevenir e analisar a funcionalidade do projeto, o que facilita a criação de testes automatizados posteriormente, garantindo novos comportamentos esperados. <br>
 
 ### Sobre os Testes
-Foram adicionados testes para melhor ilustrar um cenário real e também para ajudar aqueles que dizem não ser possível testar persistência, muitas vezes com receio de adicionar dados, mas no fundo é o tipo de teste que sempre será necessário. Portanto, é melhor automatizá-lo. Além disso, os testes de serviços, funções e endpoints são bons padrões para o desenvolvimento de APIs. Assim, faço essa ressalva, pois acredito ser essencial a prática de testes.
+Foram adicionados testes para melhor ilustrar um cenário real e também para ajudar aqueles que dizem não ser possível testar persistência, muitas vezes com receio de adicionar dados, mas no fundo é o tipo de teste que sempre será necessário. Portanto, é melhor automatizá-lo. <br> 
+Além disso, os testes de serviços, funções e endpoints são bons padrões para o desenvolvimento de APIs. Assim, faço essa ressalva, pois acredito ser essencial a prática de testes. <br>
 Gostaria de poder fazer testes de concorrência e outras coisas, mas o tempo é curto para realizar tudo que desejo.
 
 ### Considerações finais
-A alteração na ordem da demonstração foi feita para manter uma evolução do projeto em etapas, refletindo melhor o processo de análise e criação de um escopo. Assim, acredito que mesmo após sua criação, ela será útil para a posteridade, podendo servir para estudo, melhoria ou até mesmo para compreender partes de uma documentação.
+A alteração na ordem da demonstração foi feita para manter uma evolução do projeto em etapas, refletindo melhor o processo de análise e criação de um escopo. <br> Assim, acredito que mesmo após sua criação, ela será útil para a posteridade, podendo servir para estudo, melhoria ou até mesmo para compreender partes de uma documentação.
 
 
 
