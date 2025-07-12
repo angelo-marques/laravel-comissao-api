@@ -4,7 +4,7 @@ namespace Tests\Feature\Sale\Unit;
 use PHPUnit\Framework\TestCase;
 use App\Domain\Sale\Services\CalculatorCommission;
 
-class CommissionCalculatorTest extends TestCase
+class CalculatorCommissionTest extends TestCase
 {
     public function test_calcula_comissao_direta()
     {
