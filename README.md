@@ -101,6 +101,7 @@ Padrão RESTful API.
 Arquitetura Limpa (Clean Architecture).
 Teste de Unidade da Regra de Negócio. 
 Teste de Unidade do Repositório ou Teste de Persistencia.
+
 -----------------------
 
 ### Como rodar o projeto
@@ -134,9 +135,9 @@ Motivo: estou de mudança e precisarei de tempo para analisar todos os pontos.  
 Portanto, peço desculpas por esse problema, mas são apenas dois testes de persistência. <br/> 
 
 ### Ambiguidades
-Pontos utilizados para resolver ou evitar ambiguidades:
-Modularidade: O sistema, embora simples, seguiu o padrão de divisão em partes com responsabilidades bem definidas, como pastas e nomes fortemente tipados, o que facilita a compreensão e a manutenção.
-Testabilidade: Ou seja, os testes definidos foram elaborados para prevenir e analisar a funcionalidade do projeto, o que facilita a criação de testes automatizados posteriormente, garantindo novos comportamentos esperados.
+Pontos utilizados para resolver ou evitar ambiguidades: <br>
+Modularidade: O sistema, embora simples, seguiu o padrão de divisão em partes com responsabilidades bem definidas, como pastas e nomes fortemente tipados, o que facilita a compreensão e a manutenção. <br>
+Testabilidade: Ou seja, os testes definidos foram elaborados para prevenir e analisar a funcionalidade do projeto, o que facilita a criação de testes automatizados posteriormente, garantindo novos comportamentos esperados. <br>
 
 ### Sobre os Testes
 Foram adicionados testes para melhor ilustrar um cenário real e também para ajudar aqueles que dizem não ser possível testar persistência, muitas vezes com receio de adicionar dados, mas no fundo é o tipo de teste que sempre será necessário. Portanto, é melhor automatizá-lo. Além disso, os testes de serviços, funções e endpoints são bons padrões para o desenvolvimento de APIs. Assim, faço essa ressalva, pois acredito ser essencial a prática de testes.
